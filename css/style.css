@@ -1,0 +1,262 @@
+
+
+body  {
+  font-size: 100%;
+  color: #666666;
+  font-family: roboto;
+  margin: 8px;
+  background: #f2f2f2;
+}
+
+.txt_article {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   line-height: 1.4em;        /* fallback */
+   max-height: 4.2em;       /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+}
+
+.card_main {
+  width: 100%;
+}
+
+
+.delete_class {
+  width: 21em;
+}
+
+.txt_user {
+  margin: 18px 16px 8px 16px;
+  padding-top: 16px;
+  font-size: 120%;
+}
+
+.txt_user_description {
+  margin: 0px 16px 0px 16px;
+  padding-bottom: 16px;
+  font-size: 80%;
+}
+
+.txt_user_description1 {
+  margin: 0px 16px 0px 16px;
+  color: black;
+  padding-bottom: 16px;
+}
+
+.txt_title {
+  font-size: 1.6em;
+  margin-top: 28px;
+}
+
+.txt_post_type {
+  color: #ffffff;
+  margin: 0px;
+  font-family: roboto;
+  font-weight: 400;
+  padding: 8px 16px;
+}
+
+.post_header {
+  color: #ffffff;
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0,0,0,.4);
+  border-radius: 8px 8px 0px 0px;
+  height: auto;
+  background-color: #00897B;
+}
+
+
+.card_image {
+  margin-right: 16px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  top: -1em;
+  width: 31%;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0,0,0,.5);
+}
+
+.card_content {
+  position: relative;
+  background: #ffffff;
+  margin: 0px;
+  border-radius: 0px 0px 8px 8px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  height: auto;
+  padding: 4px 16px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Pre-render the bigger shadow, but hide it */
+.card_content::after {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .4);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  content: "";
+  border-radius: 8px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Transition to showing the bigger shadow on hover */
+.card_content:hover::after, .post_header:hover + .card_content::after{
+  opacity: 1;
+}
+
+section {
+  text-align: center;
+  margin-top: 80px;
+}
+section > button {
+  background: #00897B;
+  display: block;
+
+  width: 175px;
+  height: 50px;
+  font-size: 22.996px;
+  line-height: 20px;
+  padding: 12px 18px 13px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 35px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #ffffff;
+
+}
+section > button:hover {
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #cc5350;
+    color:#fff;
+    z-index: 1000;
+    height: 70px;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    text-align:center;
+
+}
+.header.shrink {
+    height: 100px;
+    line-height:80px;
+}
+.header h1
+{
+    font-size:30px;
+    font-weight:normal;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.header.shrink h1
+{
+    font-size:24px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+
+.colorPicker {
+  margin-top: 1em;
+  font-size: 0.875em;
+  text-align: center;
+  display: inline-table;
+  width: 100%;
+  max-width: 40em;
+  background: #fff;
+  padding: 2px;
+  border-radius: 0.35em;
+  box-shadow: 0 0.5em 1.5em rgba(0,0,0,0.15);
+}
+.colorPicker label {
+  -webkit-tap-highlight-color: rgba(255,255,255,0.5);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: table-cell;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0.5em 1em;
+  text-transform: capitalize;
+  letter-spacing: -0.5em;
+  color: transparent;
+  opacity: 0.35;
+  width: 1%;
+  background-image: -webkit-linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+  background-image: linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+}
+.colorPicker label.red {
+  background-color: #ff3e05;
+  -webkit-tap-highlight-color: #ff3e05;
+}
+.colorPicker label.orange {
+  background-color: #ff8d05;
+  -webkit-tap-highlight-color: #ff8d05;
+}
+.colorPicker label.yellow {
+  background-color: #ecca05;
+  -webkit-tap-highlight-color: #ecca05;
+}
+.colorPicker label.green {
+  background-color: #333333;
+  -webkit-tap-highlight-color: #333333;
+}
+.colorPicker label.blue {
+  background-color: #057fff;
+  -webkit-tap-highlight-color: #057fff;
+}
+.colorPicker label.indigo {
+  background-color: #7500ca;
+  -webkit-tap-highlight-color: #7500ca;
+}
+.colorPicker label.violet {
+  background-color: #cc6fcc;
+  -webkit-tap-highlight-color: #cc6fcc;
+}
+.colorPicker label:first-of-type {
+  border-radius: 0.25em 0 0 0.25em;
+}
+.colorPicker label:last-of-type {
+  border-radius: 0 0.25em 0.25em 0;
+}
+.colorPicker label:hover {
+  opacity: 1;
+  color: #fff;
+  letter-spacing: normal;
+}
+.colorPicker input {
+  display: none;
+}
+.colorPicker input:checked + label {
+  width: 90%;
+  opacity: 1;
+  color: #fff;
+  letter-spacing: normal;
+}
