@@ -46,6 +46,8 @@ function checkTime(i) {
         <div>
             <section>
                 <button class="reg" id="addTaskButton"> <b>+ Add Event</b></button>
+                <input id="goContacts" type="button" value="Contacts" class="button-add" />
+
             </section>
         </div>
 
@@ -223,6 +225,11 @@ function checkTime(i) {
     var addTaskButton = document.getElementById("addTaskButton");
     addTaskButton.addEventListener('click', function() {
         window.location.href='addTask.html' ;
+    });
+
+
+    $("#goContacts").click(function(){
+      window.location.href='contactList.html' ;
     });
 
     function changeCalendatColor(color) {

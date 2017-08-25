@@ -15,6 +15,14 @@ module.exports = [
         "clobbers": [
             "window.NativeKeyboard"
         ]
+    },
+    {
+        "id": "com.dbaq.cordova.contactsPhoneNumbers.contactsPhoneNumbers",
+        "file": "plugins/com.dbaq.cordova.contactsPhoneNumbers/www/contactsPhoneNumbers.js",
+        "pluginId": "com.dbaq.cordova.contactsPhoneNumbers",
+        "clobbers": [
+            "navigator.contactsPhoneNumbers"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -22,7 +30,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.2",
     "cordova-plugin-spinner-dialog": "1.3.1",
-    "cordova-plugin-native-keyboard": "1.4.1"
+    "cordova-plugin-native-keyboard": "1.4.1",
+    "com.dbaq.cordova.contactsPhoneNumbers": "0.0.9"
 };
 // BOTTOM OF METADATA
 });

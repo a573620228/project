@@ -1,0 +1,98 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-contacts-phonenumbers",
+        "scope": null,
+        "escapedName": "cordova-plugin-contacts-phonenumbers",
+        "name": "cordova-plugin-contacts-phonenumbers",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/beyram/Documents/CordovaApps/schedule/node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-contacts-phonenumbers@latest",
+  "_id": "cordova-plugin-contacts-phonenumbers@0.0.9",
+  "_inCache": true,
+  "_location": "/cordova-plugin-contacts-phonenumbers",
+  "_nodeVersion": "7.3.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-contacts-phonenumbers-0.0.9.tgz_1496029021581_0.7830563490279019"
+  },
+  "_npmUser": {
+    "name": "dbaq",
+    "email": "didier.baquier@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-contacts-phonenumbers",
+    "scope": null,
+    "escapedName": "cordova-plugin-contacts-phonenumbers",
+    "name": "cordova-plugin-contacts-phonenumbers",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-contacts-phonenumbers/-/cordova-plugin-contacts-phonenumbers-0.0.9.tgz",
+  "_shasum": "079851b398eb7d82e0ae88758dbb3b119f973e75",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-contacts-phonenumbers",
+  "_where": "/home/beyram/Documents/CordovaApps/schedule/node_modules",
+  "author": {
+    "name": "Didier Baquier"
+  },
+  "bugs": {
+    "url": "https://github.com/dbaq/cordova-plugin-contacts-phone-numbers/issues"
+  },
+  "cordova": {
+    "id": "com.dbaq.cordova.contactsPhoneNumbers",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova Plugin to List Contacts Phone Numbers ",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "079851b398eb7d82e0ae88758dbb3b119f973e75",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-contacts-phonenumbers/-/cordova-plugin-contacts-phonenumbers-0.0.9.tgz"
+  },
+  "gitHead": "bef128e5d1a88ba560b1e405ca4e384c33c82db7",
+  "homepage": "https://github.com/dbaq/cordova-plugin-contacts-phone-numbers#readme",
+  "keywords": [
+    "cordova",
+    "contacts",
+    "list",
+    "phone",
+    "numbers",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "dbaq",
+      "email": "didier.baquier@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-contacts-phonenumbers",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbaq/cordova-plugin-contacts-phone-numbers.git"
+  },
+  "scripts": {},
+  "version": "0.0.9"
+}

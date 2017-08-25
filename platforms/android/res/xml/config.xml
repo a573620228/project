@@ -11,6 +11,9 @@
         <param name="android-package" value="nl.xservices.plugins.nativekeyboard.NativeKeyboard" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="ContactsPhoneNumbers">
+        <param name="android-package" value="com.dbaq.cordova.contactsPhoneNumbers.ContactsManager" />
+    </feature>
     <name>ScheduleEvent</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

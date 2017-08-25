@@ -16,6 +16,9 @@
         "cordova-plugin-native-keyboard": {
             "LICENSE": "TRIAL",
             "PACKAGE_NAME": "io.cordova.schedule"
+        },
+        "com.dbaq.cordova.contactsPhoneNumbers": {
+            "PACKAGE_NAME": "io.cordova.schedule"
         }
     },
     "dependent_plugins": {}
