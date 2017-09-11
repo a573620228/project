@@ -7,7 +7,27 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
          <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Drug Reminder</title>
+         <title>Events Schedule</title>
+        <style>
+        *
+        {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        input
+        {
+        -webkit-user-select: auto !important;
+        -khtml-user-select: auto !important;
+        -moz-user-select: auto !important;
+        -ms-user-select: auto !important;
+        user-select: auto !important;
+        }
+
+        </style>
     </head>
     <body>
         <div class="header">
@@ -16,12 +36,20 @@
 
         <div>
         </div>
-        <div class="delete_class" style="margin-top: 100px;" id="listReminds"> 
+        <div class="delete_class" style="margin-top: 100px;" id="listReminds">
 
         </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-
+    <script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+       document.addEventListener("backbutton", onBackKeyDown, false);
+   }
+   function onBackKeyDown() {
+     window.location.href= "index.html"
+   }
+    </script>
     </body>
 </html>

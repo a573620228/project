@@ -117,7 +117,6 @@ body  {
 section {
   text-align: center;
   margin-top: 80px;
-  display: flex;
   margin-bottom: 10px;
 }
 section > button {
@@ -265,6 +264,22 @@ section > button:hover {
 
 input.button-add {
   background-image: url(../images/phone-book.png);
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+      border: none;
+      cursor: pointer;
+      height: 40px;
+      padding-left: 38px;
+      vertical-align: middle;
+      font-size: 25px;
+      font-weight: bolder;
+      margin-top: 13px;
+      margin-left: 10px;
+}
+
+input.button-map {
+  background-image: url(../images/map.png);
       background-color: transparent;
       background-repeat: no-repeat;
       background-position: 0px 0px;

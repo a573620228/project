@@ -2,7 +2,7 @@
 
 <html>
     <head>
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://introtoapps.com  data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *">
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://maps.gstatic.com https://csi.gstatic.com  https://maps.googleapis.com http://introtoapps.com  data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *">
 
       <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
         <meta name="format-detection" content="telephone=no">
@@ -10,7 +10,27 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
          <link rel="stylesheet" type="text/css" href="css/style2.css">
            <script src="js/jquery-1.11.1.min.js"></script>
-        <title>Drug Reminder</title>
+           <style>
+           *
+           {
+           -webkit-user-select: none;
+           -khtml-user-select: none;
+           -moz-user-select: none;
+           -ms-user-select: none;
+           user-select: none;
+           }
+
+           input
+           {
+           -webkit-user-select: auto !important;
+           -khtml-user-select: auto !important;
+           -moz-user-select: auto !important;
+           -ms-user-select: auto !important;
+           user-select: auto !important;
+           }
+
+           </style>
+           <title>Events Schedule</title>
     </head>
     <body>
         <div class="header">
@@ -22,6 +42,12 @@
                 <input type="textShortMessage" id="drugType"><span class="highlight"></span><span class="bar"></span>
                 <label>Event Name</label>
             </div>
+
+            <div class="group">
+                <input type="text" id="eventPlace" ><span class="highlight"></span><span class="bar"></span>
+                <label>Location</label>
+            </div>
+
             <div class="group">
                 <input type="date" id="drugDate"><span class="highlight"></span><span class="bar"></span>
                 <label>Date</label>
@@ -31,6 +57,10 @@
                 <label>Time</label>
             </div>
 
+            <button type="button" style="background: darksalmon;" class="button buttonBlue" id="imgEvent">+ Add Image
+                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </button>
+
             <button type="button" class="button buttonBlue" id="saveRemind">Save
                 <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
             </button>
@@ -38,5 +68,52 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/addTask.js"></script>
+
+    <script>
+
+
+        $('#eventPlace').removeAttr('placeholder');
+        var autocomplete;
+        function initAutocomplete() {
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+
+            autocomplete = new google.maps.places.Autocomplete(
+                    /** @type {!HTMLInputElement} */(document.getElementById('eventPlace')),
+                    {types: ['geocode']});
+            // When the user selects an address from the dropdown, populate the address
+            // fields in the form.
+
+            autocomplete.addListener('place_changed', fillInAddress);
+        }
+
+        function fillInAddress() {
+            // Get the place details from the autocomplete object.
+            $('#eventPlace').removeAttr('placeholder');
+            var place = autocomplete.getPlace();
+            document.getElementById("eventPlace").value = place.formatted_address;
+
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0_Ny4Oi9eREZwceU1JDBXOKaybpKOYvM&signed_in=true&libraries=places&callback=initAutocomplete"
+            async defer>
+
+            </script>
+
+    <script>
+    setTimeout(function(){
+      $('#eventPlace').removeAttr('placeholder');
+  }, 800);
+    </script>
+
+    <script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+       document.addEventListener("backbutton", onBackKeyDown, false);
+   }
+   function onBackKeyDown() {
+     window.location.href= "index.html"
+   }
+    </script>
     </body>
 </html>

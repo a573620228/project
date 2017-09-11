@@ -19,7 +19,21 @@
         },
         "com.dbaq.cordova.contactsPhoneNumbers": {
             "PACKAGE_NAME": "io.cordova.schedule"
+        },
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyANmqhLtdTYacJPsYj0e2c020pPddzb-7s",
+            "PACKAGE_NAME": "io.cordova.schedule"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "io.cordova.schedule"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.cordova.schedule"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.schedule"
+        }
+    }
 }

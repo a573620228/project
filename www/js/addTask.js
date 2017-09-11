@@ -3,10 +3,26 @@ buttonSaveRemind.addEventListener('click', function() {
     newElement();
 });
 
+var eventPic ;
+    $("#imgEvent").click(function(){
+                window.imagePicker.getPictures(
+          function(results) {
+            eventPic =  results[0];
+            alert("You have selected : " + eventPic)
+          /*  for (var i = 0; i < results.length; i++) {
+              console.log('Image URI: ' + results[i]);
+              eventPic
+            }*/
+          }, function (error) {
+            console.log('Error: ' + error);
+          }
+          );
+    });
+
 var drugType = document.getElementById("drugType");
 var drugDate = document.getElementById("drugDate");
 var drugTime = document.getElementById("drugTime");
-
+var eventPlace = document.getElementById("eventPlace");
 addCurrentTime();
 
 
@@ -17,6 +33,13 @@ if (Reminds == null) {
     console.log("hhh")
 }
 var idItem = Reminds.length ;
+
+eventPlace.addEventListener("blur", function( event ) {
+    if (eventPlace.value.length > 0) {
+        eventPlace.className += " used";
+    }
+
+}, true);
 
 drugType.addEventListener("blur", function( event ) {
     if (drugType.value.length > 0) {
@@ -60,14 +83,17 @@ function addCurrentTime() {
 }
 
 function newElement() {
-    if (drugType.value === '' || drugDate.value === '' || drugTime.value === '' ) {
+    if (drugType.value === '' || eventPlace.value === '' || drugDate.value === '' || drugTime.value === '' || eventPic === '') {
         alert("You must fill all the blanks !");
     } else {
+
         var item = {
             id: idItem ,
+            location : eventPlace.value,
             drugType: drugType.value,
             drugDate: drugDate.value,
             drugTime: drugTime.value,
+            pic : eventPic
         };
 
         Reminds.push(item);
@@ -94,7 +120,7 @@ function saveToServer(item){
     },
     error: function(err){
       window.plugins.spinnerDialog.hide();
-      alert("Error Saving Event ! " + e);
+      alert("Error Saving Event ! " + err);
     }
     })
 }

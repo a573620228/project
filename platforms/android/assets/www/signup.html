@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com  'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style2.css">
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <title>Events Schedule</title>
+        <style>
+        *
+        {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        input
+        {
+        -webkit-user-select: auto !important;
+        -khtml-user-select: auto !important;
+        -moz-user-select: auto !important;
+        -ms-user-select: auto !important;
+        user-select: auto !important;
+        }
+
+        </style>
+        <style>
+        .panel-default > .panel-heading {
+              color: #333333;
+              background-color: #ffffff;
+              border-color: #e2e9e6;
+          }
+
+          .panel-footer {
+              padding: 10px 15px;
+              background-color: #ffffff;
+              border-top: 1px solid #e2e9e6;
+              border-bottom-right-radius: -1;
+              border-bottom-left-radius: -1;
+          }
+
+          .user-friend-list img, .media img {
+          height:50px;
+          width:50px;
+          }
+
+          .container {
+            display:flex;
+            flex-direction:column;
+            width:100%;
+          }
+
+          .loginButton {
+            height:46px;
+            width:250px;
+            background:#035688;
+            border:none;
+            margin-right:auto;
+            margin-left:auto;
+            margin-top:20px;
+            color:#ffffff;
+            font-size:12px;
+            font-weight:bold;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1><b>Schedule Events</b></h1>
+        </div>
+
+        <div>
+        </div>
+        <div class="container" style="margin-top: 100px;">
+        <center><p style="font-size: x-large;font-weight: bolder;">SIGNUP FORM</p></center>
+        <form>
+            <div class="group">
+                <input type="text" id="usernameUser"><span class="highlight"></span><span class="bar"></span>
+                <label>USERNAME</label>
+            </div>
+
+            <div class="group">
+                <input type="password" id="passwordUser"><span class="highlight"></span><span class="bar"></span>
+                <label>PASSWORD</label>
+            </div>
+
+          </form>
+        <button id = "SIGNUPBUTTON" class="loginButton">SIGNUP</button>
+        <button id="goLogin" style="background: darksalmon;" class="loginButton">LOGIN</button>
+        </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+      var Users = JSON.parse(window.localStorage.getItem("Users"));
+
+      if (Users == null) {
+          Users = new Array();
+      }
+
+      var usernameUser = document.getElementById("usernameUser");
+      var passwordUser = document.getElementById("passwordUser");
+
+      usernameUser.addEventListener("blur", function( event ) {
+          if (usernameUser.value.length > 0) {
+              usernameUser.className += " used";
+          }
+
+      }, true);
+      passwordUser.addEventListener("blur", function( event ) {
+          if (passwordUser.value.length > 0) {
+              passwordUser.className += " used";
+          }
+      }, true);
+
+      $("#goLogin").click(function(){
+        window.location.href ="login.html"
+      });
+
+      $("#SIGNUPBUTTON").click(function(){
+          if (usernameUser.value === '' || passwordUser.value === '' ) {
+            alert("Please Fill the fields !")
+          } else {
+            window.plugins.spinnerDialog.show(null, "Saving Event to IntroToApps & LocalStorage ...",true);
+            var hash = sha256.create();
+            hash.update(passwordUser.value);
+            var hashed = hash.hex()
+            var User = {
+                username: usernameUser.value ,
+                password : passwordUser.value,
+                hashedPassword: hashed ,
+            };
+            Users.push(User);
+            window.localStorage.setItem("Users", JSON.stringify(Users));
+            window.plugins.spinnerDialog.hide();
+            alert("USER REGISTRED ! \nHashed PassWord: " + hashed);
+            window.location.href ="login.html"
+          }
+      });
+
+}
+    </script>
+
+    <script type="text/javascript" src="js/sha256.min.js" ></script>
+    </body>
+</html>

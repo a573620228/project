@@ -7,7 +7,27 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
          <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Drug Reminder</title>
+         <style>
+         *
+         {
+         -webkit-user-select: none;
+         -khtml-user-select: none;
+         -moz-user-select: none;
+         -ms-user-select: none;
+         user-select: none;
+         }
+
+         input
+         {
+         -webkit-user-select: auto !important;
+         -khtml-user-select: auto !important;
+         -moz-user-select: auto !important;
+         -ms-user-select: auto !important;
+         user-select: auto !important;
+         }
+
+         </style>
+         <title>Events Schedule</title>
             <script src="js/jquery-1.11.1.min.js"></script>
          <!--Calender-->
 	  <link rel="stylesheet" href="css/clndr.css" type="text/css" />
@@ -47,7 +67,7 @@ function checkTime(i) {
             <section>
                 <button class="reg" id="addTaskButton"> <b>+ Add Event</b></button>
                 <input id="goContacts" type="button" value="Contacts" class="button-add" />
-
+                <input id="goMaps" type="button" value="Event Maps" class="button-map" />
             </section>
         </div>
 
@@ -232,6 +252,10 @@ function checkTime(i) {
       window.location.href='contactList.html' ;
     });
 
+    $("#goMaps").click(function(){
+      window.location.href='eventMaps.html' ;
+    });
+
     function changeCalendatColor(color) {
         console.log(color);
         $(".cal1 .clndr .clndr-table").css("background-color", color+"");
@@ -254,6 +278,15 @@ function checkTime(i) {
             window.plugins.spinnerDialog.hide();}
               , 1500);
             }
+    </script>
+    <script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+       document.addEventListener("backbutton", onBackKeyDown, false);
+   }
+   function onBackKeyDown() {
+     
+   }
     </script>
     </body>
 </html>
